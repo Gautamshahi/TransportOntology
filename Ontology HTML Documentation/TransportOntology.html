@@ -1,0 +1,256 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xml:lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      xmlns:dcterms="http://purl.org/dc/terms/"
+      xmlns:dct="http://purl.org/dc/terms/"
+      xmlns:tisc="http://observedchange.com/tisc/ns#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:wot="http://xmlns.com/wot/0.1/"
+      xmlns:prv="http://purl.org/net/provenance/ns#"
+      xmlns:opmv="http://purl.org/net/opmv/ns#"
+      xmlns:moac="http://observedchange.com/moac/ns#"
+      xmlns:tisc="http://observedchange.com/tisc/ns#"
+>
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="alternate" type="application/owl" href="mod-ontology-31Jul2015.owl" />
+<link rel="stylesheet" type="text/css" href="TransportOntology.css" />
+  <title>An Ontology for Transportantion System</title>
+    <style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+    </style>
+</head>
+
+
+
+<body>
+
+<h1 about="" property="dcterms:title" xml:lang="en">TransportOnto: An Ontology for Transportantion System</h1>
+<div about="" typeof="foaf:Document">
+
+<div property="rdfs:label" content="Document that defines the Management of a Crisis Vocabulary" xml:lang="en"></div>
+  <div rel="foaf:primaryTopic">
+    <div about="http://www.observedchange.com/moac/ns#">
+      <div rel="rdf:type" resource="http://purl.org/net/provenance/ns#DataItem"></div>
+      <div rel="rdf:type" resource="http://www.w3.org/2002/07/owl#Ontology"></div>
+      <div property="dcterms:title" content="Management of a Crisis Vocabulary namespace" xml:lang="en"></div>
+      <div rel="prv:createdBy">
+	    <div rel="rdf:type" resource="http://purl.org/net/provenance/ns#DataCreation"></div>
+	    <div rel="prv:performedBy" resource="http://kauppinen.net/tomi#me"></div>
+	    <div property="prv:performedAt" content="2012-01-29T20:30:00Z" datatype="xsd:dateTime"></div>
+      </div>
+      <div rel="dcterms:creator" resource="http://kauppinen.net/tomi#me"></div>
+      <div property="dcterms:created" content="2012-01-29T20:30:00Z" datatype="xsd:dateTime"></div>
+     </div>
+   </div>
+</div>
+
+<h2>12 September 2018</h2>
+
+<dl>
+  <dt>This version:</dt>
+  <dd><a href="https://github.com/Gautamshahi/TransportOntology/">
+      https://github.com/Gautamshahi/TransportOntology/</a></dd>
+  <dt>Latest version:</dt>
+  <dd><a href="https://github.com/Gautamshahi/TransportOntology/">https://github.com/Gautamshahi/TransportOntology/#1.0.0</a></dd>
+
+  <dt>Revision:</dt>
+  <dd>Revision: 0.1</dd>
+  <dt>Author:</dt>
+<dd> <a href="https://www.linkedin.com/in/gautamshahi/">Gautam Kishore Shahi</a> and <a href="https://www.linkedin.com/in/dnandini/">Durgesh Nandini</a> (DISI, <a href="http://www.isibang.ac.in/">University of Trento</a>, Italy).
+   </dd>    
+<dd>   
+    </dd>
+  
+  <dt>Secondary Contributors:</dt>
+      <dd>See <a href="#acknowledgements">acknowledgements</a>.</dd>  
+</dl>
+
+
+
+<div>
+<h2 id="sec-abstract">Abstract</h2>
+
+<p>
+  <span about="https://github.com/Gautamshahi/TransportOntology/#" property="dcterms:description">
+In this work, we present a domain ontology for Transportation System. We have developed an ontology for a semantics-aware transportation system from the perspective of a traveler user, capable of an-
+swering general competence queries like the nearest bus stop to a particular place, the nearest parking slots available, etc. We have studied
+the transportation system of some of the big cities of the world and have tried to come up with a vocabulary that can be applied to any city with
+little modications. This vocabulary is further aligned with an upper-level ontology to have a common starting point.
+</span></p>
+</div>
+<hr>
+
+
+<h2 id="sec-toc">Table of contents</h2>
+<ul>
+  <li><a href="#sec-intro">1. Introduction</a></li>
+  
+    <li><a href="#sec-glance">2. TransportOnto: An Ontology for Transportantion System</a></li>
+  
+  <li><a href="#sec-specification3.1">3.1 TransportOnto: classes</a></li>  
+  <li><a href="#sec-specification3.2">3.2 TransportOnto: Object properties</a></li>
+  <li><a href="#sec-specification3.2">3.2 TransportOnto: Data properties</a></li>
+  
+</ul>
+<h2 id="sec-intro">1. Introduction</h2>
+<br>
+
+
+<p>
+  <span about="https://github.com/Gautamshahi/TransportOntology/#" property="dcterms:description">
+The underlying functioning of an ontology and the mechanism of processing data in a machine readable format makes an ontology an important artifact of the
+semantic web. Domain ontologies provide a controlled vocabulary of concepts,syntax and semantics that help machine and people communicate.
+Information available on current transportation systems is highly unstructured and unorganized. The unstructured representation of transportation
+system makes it hard to extract meaningful information. Often, a user has to visit several web portals to acquire the required information; it becomes worse
+in case of a new user who has never visited a city before. When considering the functioning of the transportation system, a user may be
+one who has to travel from one place to another (a traveler) or the one who helps a traveler to travel (driver, ticket officer, etc.). Choosing the best way to move
+from one place to another for a traveler may involve different Filters: modes of transportation available, schedule of a public vehicle, parking space availability,
+safety concerns, etc. On the other hand, for a service provider, various statistics may be of concern, for example, number of passengers travelling, the amount of
+money collected from tickets, crime rates, number of accidents reported, etc. The focus of this work is to build an ontology from a traveler's perspective to represent the transportation system. This, in turn, achieves answering user
+queries in a straightforward and less time-consuming manner. The ontology inherently provides a simple vocabulary for describing a generic transportation system. The vocabulary provides information that a traveler may need and plan
+his journey accordingly.
+</span></p>
+<hr>
+</p> 
+
+<div class="glance">
+<h2 id="sec-glance">2. An Ontology for Transportantion System </h2>
+<br>
+<p>An alphabetical index of terms from the An Ontology for Transportantion System, by class and by property, are given below. All the terms are hyperlinked to their detailed description for quick reference.</p>
+<br>
+<div style="padding: 5px; border: dotted; background-color: #ddd;">
+<p>Classes: |
+    <a href="#Agent">Accident</a> | 
+	<a href="#Agent">AgenticePhysicalObject</a> |
+    <a href="#Domain">Aircraft</a> |
+	<a href="#Domain">airplane</a> |
+	<a href="#Domain">Airport</a> | 
+	<a href="#Organisation">Ambualance</a> | 
+    <a href="#Person">AutoRickshaw</a> |
+	<a href="#Person">Building</a> |
+    <a href="#FileFormat">Bus</a> | 
+    <a href="#KnowledgeRepresentationFormalism">BusStation</a>  |
+    <a href="#LevelOfFormality">CableCar</a> |    
+    <a href="#Lincense">CableCarStation</a> | 
+    <a href="#Ontology">City</a> |  
+    <a href="#OntologyDesignLanguage">Coach</a> | 
+	<a href="#OntologyDesignLanguage">conveyance</a> |
+    <a href="#OntologyDesignMethodology">City</a> | 
+    <a href="#OntologyDesignTool">ChargingZone</a> | 
+	<a href="#OntologyDesignTool">ferry</a> |
+    <a href="#OntologySyntax">geographicalobject</a> | 
+	 <a href="#OntologySyntax">helicopter</a> | 
+	<a href="#OntologySyntax">Event</a> | 
+    <a href="#OntologyType">nonAgentivePhysicalObject</a> |
+    <a href="#OntologyType">metro</a> |  
+	<a href="#Lincense">motorcycle</a> | 	
+    <a href="#Project">NaturalPerson</a> 
+	<a href="#Organisation">Passenger</a> | 
+	<a href="#FileFormat">passengerTrain</a> | 
+    <a href="#Person">Personnel</a> |
+	<a href="#Person">physicalPlace</a> |
+    <a href="#KnowledgeRepresentationFormalism">railroadTrain</a>  |
+	<a href="#Ontology">restrictedArea</a> |  
+    <a href="#LevelOfFormality">ship</a> |    
+    <a href="#OntologyDesignLanguage">seaport</a> | 
+    <a href="#OntologyDesignMethodology">taxiCab</a> | 
+    <a href="#OntologyDesignTool">train</a> | 
+	<a href="#OntologySyntax">trainStation</a> | 
+    <a href="#OntologySyntax">tram</a> | 
+    <a href="#OntologyType">tramway</a> | 	   
+    <a href="#Project">truck</a> 
+	<a href="#Project">tube</a> 
+	<a href="#OntologySyntax">vehicle</a> | 
+    <a href="#OntologySyntax">watercraft</a> 
+    
+</p>
+
+<br>
+
+<p>Object Properties: |
+<a href="#contributor">district</a> |
+<a href="#creator">locatedAt</a> |
+<a href="#endorsedBy">manangedBy</a> |
+<a href="#evaluatedBy">metWith</a> |
+<a href="#formalityLevel">serveIn</a> |
+<a href="#format">startFrom</a> |
+<a href="#knowledgeRepresentationFormalism">stopAt</a> |
+<a href="#license">ticketAvailableAt</a> |
+<a href="#methodologyUsed">travelAt</a> 
+
+</p> 
+<br>
+<p>Data Properties: |
+<a href="#accessibility">address</a> |
+<a href="#acronym">airportName</a> |
+<a href="#description">description</a> |
+<a href="#document">document</a> |
+<a href="#firstName">firstName</a> |
+<a href="#lastName">lastName</a> | 
+<a href="#name">name</a> |
+<a href="#phone">phone</a> |
+<a href="#properties">properties</a> |  
+<a href="#size">size</a> |
+
+
+</p> </div>
+
+
+<!-- MOD Classes-->
+<h3 id="sec-specification3.1">3.1  TransportOnto Classes</h3>
+
+</div>
+
+
+<!--Object Properties-->
+
+
+
+<h3 id="sec-specification3.2">3.2 TransportOnto Object Properties</h3>
+
+
+</div> 
+
+
+
+<!--Data Properties-->
+
+
+
+
+<div>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<br>
+<p>
+  <span about="acknowledgements" property="dcterms:description">
+We would like to thank Prof. Fausto Giunchiglia for providing his expertise insights in this work. 
+We also thank Dr. Subhashis Das for his valuable advice and guidance at various stages of the work.
+At last, we wish to express our gratitude to all anonymous reviewers who devoted their time and mind for this work.
+</span></p>
+</div>
+<hr>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Metadata for Ontology Description and Publiication (MOD)_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8367411-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+</div></div></body></html>
