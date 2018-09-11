@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon">
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.1</owl:versionInfo>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology for Transportation Systems in London</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransportOnto: An Ontology for Transportantion System</rdfs:comment>
     </owl:Ontology>
     
 
