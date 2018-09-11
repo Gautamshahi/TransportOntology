@@ -1,0 +1,1179 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#"
+     xml:base="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon"
+     xmlns:tol="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.1</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology for Transportation Systems in London</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#locatedAt">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#city"/>
+        <rdfs:comment xml:lang="en">assign a location to</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#managedBy -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#managedBy">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#personnel"/>
+        <rdfs:comment>vehchicle is managed by Personnel</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#metWith -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#metWith">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident"/>
+        <rdfs:comment xml:lang="en">Vehicle met with an accident.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#serveIn -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#serveIn">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#city"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vehicle Operates in city</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#startFrom -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#startFrom">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:comment xml:lang="en">the place from where a vehicle starts</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#stopAt -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#stopAt">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:comment xml:lang="en">the stop points of a vehicle</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketAvailableAt -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketAvailableAt">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketStore"/>
+        <rdfs:comment xml:lang="en">indicates the building where ticket is available for vehicle</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#travelBy -->
+
+    <owl:ObjectProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#travelBy">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#passenger"/>
+        <rdfs:range rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">the one who travels by a vehicle</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#address -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#address">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#seaport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the place where a person or organization can be found or communicated with.</rdfs:comment>
+        <rdfs:isDefinedBy>http://wordnetweb.princeton.edu/perl/webwn?s=address&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airportName -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airportName">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The name of the aiport</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#busStationName -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#busStationName">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#busStation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#congestionCharge -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#congestionCharge">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicle that emit more than 75g/km of CO2 must pay a congestion charge.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.carwow.co.uk/best/london-congestion-charge-exempt-cars-597</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#congestionChargeExemptedVehicle -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#congestionChargeExemptedVehicle">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicle that emit less than 75g/km of CO2 are exempted from congestion charge</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.carwow.co.uk/best/london-congestion-charge-exempt-cars-597</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#country -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#country">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the territory occupied by a nation</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">http://wordnetweb.princeton.edu/perl/webwn?s=country&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfAccident -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfAccident">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date of Accident occured.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfBirth -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfBirth">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date of birth of a natural person</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfRegistration -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfRegistration">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Date of registration of a vehicle</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#delay -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#delay">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Average delay of vehicle</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#employeeId -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#employeeId">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#personnel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An employee ID number is a unique string of numbers issued to each employee of a given business.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.reference.com/business-finance/employee-id-number-205fc848b93fe81d</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#engineNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#engineNumber">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Engine number may refer to an identification number marked on the engine of a vehicle or, in the case of locomotives.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Engine_number</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#fare -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#fare">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">the sum charged for riding in a public conveyance.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=fare&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=000</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#frequencyInMinutes -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#frequencyInMinutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bus"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#watercraft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">frequency of vehicle in minutes</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#houseNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#houseNumber">
+        <rdfs:subPropertyOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the intention of making it easier to locate a particular building</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/House_numbering</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#idNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#idNumber">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Id number of opertor or Passenger.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the identification number of a Nautal Person.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#latitude">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">an imaginary line around the Earth parallel to the equator.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=latitude&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=000000000000000000</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#locationOfAccident -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#locationOfAccident">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">place of accident</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#longitude">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">the angular distance between a point on any meridian and the prime meridian at Greenwich.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=longitude&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#modelName -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#modelName">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model name of a vehicle eg- Audi A3</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#name -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#name">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#city"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Name of natural person</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#number -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#number">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the number of vehicle eg- Flight Number A16</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberHired -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberHired">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bike"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cycle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">Number of Motorbikes hired per day.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfBus -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfBus">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#coach"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">number of Registered Bus in billion</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCar -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCar">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#taxiCab"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">number of Registered Car in billion</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCasualty -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCasualty">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number of people injured or killed or captured or missing in a military engagement</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCrimes -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfCrimes">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>total number of crimes occurring in million</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfMotorCycle -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfMotorCycle">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">number of Registered MotorCycle in billion</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfPassenger -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfPassenger">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airport"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCarStation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">number of passenger travelling</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfTruck -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#numberOfTruck">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#truck"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">number of Registered Truck</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#operatingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#operatingSpeed">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCar"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">the average operating speed of cable car</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#parkingSpace -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#parkingSpace">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#taxiCab"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">number of parking space available at a time</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#phoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#phoneNumber">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the number is used in calling a particular telephone</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#postalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#postalCode">
+        <rdfs:subPropertyOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a code of letters and digits added to a postal address to aid in the sorting of mail)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=zip+code&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#prohibitedAreatype -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#prohibitedAreatype">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#restrictedArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the type of prohibition in a particular area</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#registrationNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#registrationNumber">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The registration identifier is a numeric or alphanumeric ID that uniquely identifies the vehicle owner within the issuing region&apos;s database.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#route -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#route">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">an established line of travel or access</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=route&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=000000</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#street -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#street">
+        <rdfs:subPropertyOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#address"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the part of a thoroughfare between the sidewalks; the part of the thoroughfare on which vehicles travel</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=street&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStationName -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStationName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">name of train station</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicleIdentificationNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicleIdentificationNumber">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A vehicle identification number (VIN), also called a chassis number, is a unique code, including a serial number, used by the automotive industry to identify individual motor vehicles, towed vehicles, motorcycles, scooters and mopeds</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Vehicle_identification_number</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#workingHour -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#workingHour">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketStore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">operating hour of the ticket store</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#year -->
+
+    <owl:DatatypeProperty rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#year">
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident"/>
+        <rdfs:domain rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">a period of time containing 365 (or 366) days</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#accident">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfAccident"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#locationOfAccident"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">an unfortunate mishap.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=accident&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#agentivePhysicalObject -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#agentivePhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalObject"/>
+        <rdfs:isDefinedBy xml:lang="en">Within Physical objects, a special place have those to which we ascribe generic intentionality. In general, we assume that agentive objects are constituted by non-agentive objects: a person is constituted by an organism, a robot is constituted by some machinery, and so on.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://svn.kwarc.info/repos/swim/branches/0.1/WEB-INF/etc/schemas/dolce-extract.owl</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#aircraft -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#aircraft">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a vehicle that can fly.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=aircraft&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airplane -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airplane">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#aircraft"/>
+        <rdfs:comment xml:lang="en">an aircraft that has a fixed wing and is powered by propellers or jets.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=airplane&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airport -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#airport">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:comment>an airfield equipped with control tower and hangars as well as accomodations for passengers and cargo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=airport&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#artifact -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#artifact">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#nonAgentivePhysicalObject"/>
+        <rdfs:comment xml:lang="en">A man-made object taken as a whole.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=Artifact&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bike -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bike">
+        <owl:equivalentClass rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#motorcycle"/>
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">small motorcycle with a low frame and small wheels and elevated handlebars</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=bike&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#structure"/>
+        <rdfs:comment xml:lang="en">a structure that has a roof and walls and stands more or less permanently in one place</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=building&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=000000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bus -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#bus">
+        <owl:equivalentClass rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#coach"/>
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a vehicle carrying many passengers used for public transport.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=bus&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#busStation -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#busStation">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:comment>a terminal that serves bus passengers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=bus+station&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCar -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCar">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a conveyance for passengers or freight on a cable railway</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=cable+car&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCarStation -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cableCarStation">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:comment xml:lang="en">a terminal that serves cable car passengers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#chargingZone -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#chargingZone">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#congestionCharge"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The London congestion charge is a fee charged on most motor vehicles operating within the Congestion Charge Zone</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/London_congestion_charge</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#city -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#city">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a large and densely populated urban area; may include several independent administrative districts</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=city&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#coach -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#coach">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#conveyance -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#conveyance">
+        <owl:equivalentClass rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transport"/>
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#artifact"/>
+        <rdfs:comment xml:lang="en">something that serves as a means of transportation</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=Conveyance&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cycle -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#cycle">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a wheeled vehicle that has two wheels and is moved by foot pedals</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">http://wordnetweb.princeton.edu/perl/webwn?s=cycle&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#event -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#event">
+        <rdfs:comment xml:lang="en">something that happens at a given place and time</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=event&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ferry -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ferry">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#watercraft"/>
+        <rdfs:comment xml:lang="en">a boat that transports people or vehicles across a body of water and operates on a regular schedule</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=ferry&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=00</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalPlace"/>
+        <rdfs:comment xml:lang="en">A physical place whose spatial quality is q-located in geographical coordinates.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#helicopter -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#helicopter">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#aircraft"/>
+        <rdfs:comment xml:lang="en">an aircraft without wings that obtains its lift from the rotation of overhead blades</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=helicopter&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#metro -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#metro">
+        <owl:equivalentClass rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#tube"/>
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#motorcycle -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#motorcycle">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#agentivePhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#dateOfBirth"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">a human being</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnetweb.princeton.edu/perl/webwn?s=person&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=00</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#nonAgentivePhysicalObject -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#nonAgentivePhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalObject"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Among non-agentive physical objects we have for example houses, body organs,  pieces of wood, etc</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://svn.kwarc.info/repos/swim/branches/0.1/WEB-INF/etc/schemas/dolce-extract.owl</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#passenger -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#passenger">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#travelBy"/>
+                <owl:someValuesFrom rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">a traveler riding in a vehicle</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=passenger&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#passengerTrain -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#passengerTrain">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain"/>
+        <rdfs:comment xml:lang="en">train that carries passengers</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=passenger+train&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#personnel -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#personnel">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#naturalPerson"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#employeeId"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">group of people willing to obey orders</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=personnel&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalObject -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalObject">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The main characteristic of physical objects is that they are endurants with unity. However, they have no common unity criterion, since different subtypes of objects may have different unity criteria.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.loa.istc.cnr.it/ontologies/DOLCE-Lite.owl</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalPlace -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#physicalPlace">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#nonAgentivePhysicalObject"/>
+        <rdfs:comment xml:lang="en">A placeholder for physical objects that are conceived primarily as places, e.g. wrt their spatial quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain">
+        <owl:equivalentClass rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#train"/>
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">public transport provided by a line of railway cars coupled together and drawn by a locomotive</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=railroad+train&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#restrictedArea -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#restrictedArea">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An area that only authorized vehicle can enter or with some restriction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#seaport -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#seaport">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#geographicalObject"/>
+        <rdfs:comment xml:lang="en">a sheltered port where ships can take on or discharge cargo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;s=seaport</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ship -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ship">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#watercraft"/>
+        <rdfs:comment xml:lang="en">a vessel that carries passengers or freight</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=ship&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=00000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#structure -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#structure">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#artifact"/>
+        <rdfs:comment xml:lang="en">A thing constructed; a complex entity constructed of many parts</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=structure&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#taxiCab -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#taxiCab">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a car driven by a person whose job is to take passengers where they want to go in exchange for money</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=cab&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketStore -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ticketStore">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:comment xml:lang="en">a mercantile establishment for the retail sale of goods or services</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#train -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#train">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding"/>
+        <rdfs:comment>terminal where trains load or unload passengers and goods.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=train+station&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#tram -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#tram">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain"/>
+        <rdfs:comment xml:lang="en">a conveyance that transports passengers or freight in carriers suspended from cables and supported by a series of towers</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=tram&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transport -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transport">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#artifact"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;s=transport</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#transportBuilding">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of building which specially used for transportation purpose.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#truck -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#truck">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">an automotive vehicle suitable for hauling</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=truck&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#tube -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#tube">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#railroadTrain"/>
+        <rdfs:comment xml:lang="en">an electric railway operating below the surface of the ground (usually in a city)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=tube&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=0000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#conveyance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#registrationNumber"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">a conveyance that transports people or objects</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=vehicle&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=00000</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#watercraft -->
+
+    <owl:Class rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#watercraft">
+        <rdfs:subClassOf rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#vehicle"/>
+        <rdfs:comment xml:lang="en">a craft designed for water transportation</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://wordnetweb.princeton.edu/perl/webwn?s=watercraft&amp;sub=Search+WordNet&amp;o2=&amp;o0=1&amp;o8=1&amp;o1=1&amp;o7=&amp;o5=&amp;o9=&amp;o6=&amp;o3=&amp;o4=&amp;h=00</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ActonTown -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#ActonTown">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acton Town</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Amersham -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Amersham">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amersham</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#BankMonument -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#BankMonument">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bank Monument</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Barking -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Barking">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barking</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Bermondsey -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Bermondsey">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bermondsey</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Borough -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Borough">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borough</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Brixton -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#Brixton">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brixton</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#CaledonianRoad -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#CaledonianRoad">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caledonian Road</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#CanadaWater -->
+
+    <owl:NamedIndividual rdf:about="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#CanadaWater">
+        <rdf:type rdf:resource="http://disi.unitn.it/~ldkr/ldkr2016/Ontology/TransportOntologyLondon#trainStation"/>
+        <trainStationName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada Water</trainStationName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#TransportationSystemInLondon">
+        <rdfs:comment xml:lang="en">Transportaion Systems in London</rdfs:comment>
+        <owl:versionInfo xml:lang="en">1.0</owl:versionInfo>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
