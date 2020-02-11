@@ -18,14 +18,14 @@ Nandini, Durgesh, and Gautam Kishore Shahi. "An Ontology for Transportation Syst
 
 **Bibtex**
 
-@article{nandini2019ontology,
-  title={An Ontology for Transportation System},
-  author={Nandini, Durgesh and Shahi, Gautam Kishore},
-  journal={Kalpa Publications in Computing},
-  volume={10},
-  pages={32--37},
-  year={2019},
-  publisher={EasyChair}
+@article{nandini2019ontology,  
+  title={An Ontology for Transportation System},  
+  author={Nandini, Durgesh and Shahi, Gautam Kishore},  
+  journal={Kalpa Publications in Computing},  
+  volume={10},  
+  pages={32--37},  
+  year={2019},  
+  publisher={EasyChair} . 
 }
 
 
