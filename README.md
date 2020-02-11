@@ -10,13 +10,13 @@ In this work, we present a domain ontology for Transportation System. We have de
 **Author: Gautam Kishore Shahi and Durgesh Nandini, University of Trento, Italy**
 
 
-**Please cite out work as  **
+**Please cite out work as**
 
-** MLA style **
+**MLA style**
 
 Nandini, Durgesh, and Gautam Kishore Shahi. "An Ontology for Transportation System." Kalpa Publications in Computing 10 (2019): 32-37.
 
-** Bibtex **
+**Bibtex**
 
 @article{nandini2019ontology,
   title={An Ontology for Transportation System},
